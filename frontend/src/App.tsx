@@ -1,9 +1,15 @@
-function App() {
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import LoginPage from "./login/page";
+import HomePage from "./home/page";
+
+export default function App() {
   return (
-    <>
-      <div className="w-screen h-screen bg-red-500">xxx</div>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/home" element={<HomePage />} />
+      </Routes>
+    </Router>
   );
 }
-
-export default App;
