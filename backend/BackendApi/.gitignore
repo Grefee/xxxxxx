@@ -1,0 +1,42 @@
+# Build results
+bin/
+obj/
+out/
+
+# Build artifacts
+*.exe
+*.dll
+*.log
+*.db
+*.pdb
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+
+# VS Code
+.vscode/
+
+# Visual Studio
+.vs/
+*.csproj.user
+
+# Rider
+.idea/
+
+# dotnet watch
+**/node_modules/
+**/dist/
+**/wwwroot/
+
+# Others
+*.cache
+*.tmp
+
+# Mac OS junk
+.DS_Store
+
+# Windows junk
+Thumbs.db

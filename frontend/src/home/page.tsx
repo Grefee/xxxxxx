@@ -1,25 +1,7 @@
 import { Skeleton } from "antd";
 import { client } from "../interfaces";
 import { useQuery } from "@tanstack/react-query";
-
-const getClients = async () => {
-  const res = await fetch(
-    `http://${import.meta.env.VITE_BACK_URL}:${
-      import.meta.env.VITE_BACK_PORT
-    }/api/clients`,
-    {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  );
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch data..");
-  }
-  return res.json();
-};
+import api from "../lib/axios";
 
 export default function HomePage() {
   return (
@@ -42,7 +24,10 @@ function DataTable() {
     error: _error,
   } = useQuery<client[]>({
     queryKey: ["get_clients"],
-    queryFn: () => getClients(),
+    queryFn: async () => {
+      const res = await api.get("/api/clients");
+      return res.data;
+    },
   });
   return (
     <div className="border border-slate-600 rounded-lg overflow-hidden flex flex-col">

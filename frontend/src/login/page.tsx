@@ -2,6 +2,7 @@ import React from "react";
 import { Input, Button } from "antd";
 import { useNotification } from "../components/notificationContext";
 import { useNavigate } from "react-router-dom";
+import api from "../lib/axios";
 
 export default function LoginPage() {
   const { openNotification } = useNotification();
@@ -35,17 +36,10 @@ export default function LoginPage() {
           email: email,
           password: password,
         };
-        const response = await fetch(
-          `http://${import.meta.env.VITE_BACK_URL}:${
-            import.meta.env.VITE_BACK_PORT
-          }/api/login`,
-          {
-            method: "POST",
-            body: JSON.stringify(help_obj),
-            headers: { "Content-type": "application/json" },
-          }
-        );
-        if (response.ok) {
+
+        const response = await api.post("/api/login", help_obj);
+
+        if (response.status === 200) {
           setSending(false);
           openNotification("Success", "Login successful");
           navigate("/home");

@@ -31,3 +31,4 @@ C:\Users\grefee\Documents\prace_test\new\backend\BackendApi\obj\Debug\net9.0\ref
 C:\Users\grefee\Documents\prace_test\new\backend\BackendApi\obj\Debug\net9.0\BackendApi.pdb
 C:\Users\grefee\Documents\prace_test\new\backend\BackendApi\obj\Debug\net9.0\BackendApi.genruntimeconfig.cache
 C:\Users\grefee\Documents\prace_test\new\backend\BackendApi\obj\Debug\net9.0\ref\BackendApi.dll
+C:\Users\grefee\Documents\prace_test\new\backend\BackendApi\obj\Debug\net9.0\BackendApi.sourcelink.json
